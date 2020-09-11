@@ -54,7 +54,7 @@ const EditForm = (props) => {
                         <input name="Distance" value={dis} onChange={handleDis} />
                     </div>
                         <input type="hidden" name="id" value={props.user.id} />
-                    <button type="submit">Update</button>
+                    <button type="submit" className="updateBtn">Update</button>
 
                 </form>
             </div>

@@ -75,3 +75,37 @@ body {
   display: inline;
   margin: 10px;
 }
+
+/* ------------- new --------------- */
+.edit-user input {
+  background-color: rgba(0,0,0, .7);
+  color: whitesmoke;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  outline: none;
+}
+
+.updateBtn {
+  background-color: coral;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+button:active {
+  box-shadow: 0 5px whitesmoke;
+  transform: translateY(4px);
+  cursor: pointer;
+  outline:0;
+}
+
+button:hover {
+  color:white
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios'
 import { useHistory } from 'react-router-dom';
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
@@ -7,6 +7,7 @@ const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 const HikeId = (props) => {
 	
     console.log(props.user)
+	let [addFaves, setAddFaves] = useState('Add to your favorites')
 
 	let history = useHistory();
 
@@ -14,9 +15,13 @@ const HikeId = (props) => {
         history.push('/hike/');
     }
 
+	const changeText = (text) => setAddFaves(text);
+	console.log(changeText)
+
 	const handleSubmit = (event) => {
-        event.preventDefault();
-        
+		event.preventDefault();
+		
+		
 		const value1 = event.target[0].value
 		const value2 = event.target[1].value
 		
@@ -34,6 +39,7 @@ const HikeId = (props) => {
         })
         .catch(err => console.log(err))
 	}
+	
 		return (
 			<div className="hikesList">
 				
@@ -54,8 +60,8 @@ const HikeId = (props) => {
 						
 						<input hidden name="id" value={props.hike.id} />
 
-						<button className="deleteBtn button" type="submit" >
-							Add to your favorites
+						<button className="deleteBtn button" id="addBtn" type="submit" onClick={() => setAddFaves("Added")}>
+							{addFaves}
 						</button>
 					</form>
 					<button className="deleteBtn button" onClick={goBackHandle}>Go Back to Trails</button>
